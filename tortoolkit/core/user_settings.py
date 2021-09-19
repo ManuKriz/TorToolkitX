@@ -29,7 +29,7 @@ no = "❌"
 yes = "✅"
 # Central object is not used its Acknowledged
 tordb = TorToolkitDB()
-header = '<b>TorToolKitX by <a href="https://github.com/XcodersHub/TorToolkitX">XcodersHub</a></b>\n<u>USER SETTINGS MENU - v1</u>'
+header = '<b>TorToolKitX </b>\n<u>USER SETTINGS MENU - v1</u>'
 
 
 async def handle_user_setting_callback(e):
@@ -42,7 +42,7 @@ async def handle_user_setting_callback(e):
 
     if cmd[-1] != sender_id:
         print("Sender id", sender_id, " - - ", cmd[-1])
-        await e.answer("Dont touch sender dosent match.", alert=True)
+        await e.answer("That's Not For You!", alert=True)
         # await e.delete()
         return
     if cmd[1] == "mycmd":
@@ -168,7 +168,7 @@ async def handle_user_settings(e, edit=False, msg="", submenu=None, sender_id=No
                 parse_mode="html",
                 buttons=menu,
                 link_preview=False,
-                file="toolkit.jpg",
+                file="",
             )
         else:
             rmess = await e.reply(
@@ -176,7 +176,7 @@ async def handle_user_settings(e, edit=False, msg="", submenu=None, sender_id=No
                 parse_mode="html",
                 buttons=menu,
                 link_preview=False,
-                file="toolkit.jpg",
+                file="",
             )
     elif submenu == "rclonemenu":
         rcval = await get_string_variable(
